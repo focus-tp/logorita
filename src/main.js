@@ -24,6 +24,7 @@ if (burger && navLinks) {
   burger.addEventListener('click', () => {
     burger.classList.toggle('active');
     navLinks.classList.toggle('active');
+    navbar.classList.toggle('menu-open');
     document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
   });
 
@@ -31,6 +32,7 @@ if (burger && navLinks) {
     link.addEventListener('click', () => {
       burger.classList.remove('active');
       navLinks.classList.remove('active');
+      navbar.classList.remove('menu-open');
       document.body.style.overflow = '';
     });
   });
