@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ЛогоРита — Логопедический центр в Екатеринбурге</title>
+  <meta name="description" content="Логопедический центр «ЛогоРита» в Екатеринбурге. Коррекция заикания, запуск речи, логоритмика, нейрогимнастика. Опыт более 30 лет." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <!-- SVG Icon Sprite — must be in body for url(#gradient) to work -->
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;overflow:hidden">
+    <defs>
+      <linearGradient id="icon-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#38bdf8"/>
+        <stop offset="100%" stop-color="#0ea5e9"/>
+      </linearGradient>
+      <linearGradient id="icon-grad-warm" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#fcd34d"/>
+        <stop offset="100%" stop-color="#f97316"/>
+      </linearGradient>
+    </defs>
+
+    <!-- Star / badge -->
+    <symbol id="icon-star" viewBox="0 0 24 24">
+      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="url(#icon-grad-warm)" stroke-width="1.8" fill="rgba(251,191,36,0.12)" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <!-- Person / specialist -->
+    <symbol id="icon-person" viewBox="0 0 24 24">
+      <circle cx="12" cy="7" r="4" stroke="url(#icon-grad)" stroke-width="1.8" fill="rgba(16,185,129,0.1)"/>
+      <path d="M5.5 21c0-3.59 2.91-6.5 6.5-6.5s6.5 2.91 6.5 6.5" stroke="url(#icon-grad)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- Target / individual approach -->
+    <symbol id="icon-target" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" stroke="url(#icon-grad)" stroke-width="1.5" fill="rgba(16,185,129,0.05)"/>
+      <circle cx="12" cy="12" r="6" stroke="url(#icon-grad)" stroke-width="1.5" fill="rgba(16,185,129,0.08)"/>
+      <circle cx="12" cy="12" r="2.5" fill="url(#icon-grad)"/>
+    </symbol>
+
+    <!-- Book / methods -->
+    <symbol id="icon-book" viewBox="0 0 24 24">
+      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="url(#icon-grad)" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="url(#icon-grad)" stroke-width="1.8" fill="rgba(16,185,129,0.08)" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M8 7h8M8 11h5" stroke="url(#icon-grad)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- Home / cozy office -->
+    <symbol id="icon-home" viewBox="0 0 24 24">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="url(#icon-grad)" stroke-width="1.8" fill="rgba(16,185,129,0.1)" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 22V12h6v10" stroke="url(#icon-grad)" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <!-- Heart / family support -->
+    <symbol id="icon-heart" viewBox="0 0 24 24">
+      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="url(#icon-grad)" stroke-width="1.8" fill="rgba(16,185,129,0.12)" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <!-- Speech bubble / speech launch -->
+    <symbol id="icon-speech" viewBox="0 0 24 24">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="url(#icon-grad)" stroke-width="1.8" fill="rgba(16,185,129,0.1)" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M8 9h8M8 13h4" stroke="url(#icon-grad)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- Wave / stuttering correction -->
+    <symbol id="icon-wave" viewBox="0 0 24 24">
+      <path d="M2 12c1.5-3 3-4.5 5-4.5s3 3 5 3 3.5-3 5-3 3.5 1.5 5 4.5" stroke="url(#icon-grad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M2 17c1.5-3 3-4.5 5-4.5s3 3 5 3 3.5-3 5-3 3.5 1.5 5 4.5" stroke="url(#icon-grad)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.4"/>
+      <path d="M2 7c1.5-3 3-4.5 5-4.5s3 3 5 3 3.5-3 5-3 3.5 1.5 5 4.5" stroke="url(#icon-grad)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.4"/>
+    </symbol>
+
+    <!-- Letters / sound correction -->
+    <symbol id="icon-letters" viewBox="0 0 24 24">
+      <text x="2" y="18" font-family="Georgia, serif" font-size="16" font-weight="700" fill="url(#icon-grad)">A</text>
+      <text x="13" y="17" font-family="Georgia, serif" font-size="10" font-weight="700" fill="url(#icon-grad)" opacity="0.55">б</text>
+      <path d="M2 21h20" stroke="url(#icon-grad)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- Brain / defectologist -->
+    <symbol id="icon-brain" viewBox="0 0 24 24">
+      <path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z" stroke="url(#icon-grad)" stroke-width="1.8" fill="rgba(16,185,129,0.1)" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 21h6" stroke="url(#icon-grad)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <path d="M10 17v4M14 17v4" stroke="url(#icon-grad)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path d="M9 9c0-1 .5-2 1.5-2s1.5 1 1.5 2-.5 1.5-1.5 1.5M12 12v1" stroke="url(#icon-grad)" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- Music / logorhythmics -->
+    <symbol id="icon-music" viewBox="0 0 24 24">
+      <circle cx="6" cy="18" r="3" stroke="url(#icon-grad)" stroke-width="1.8" fill="rgba(16,185,129,0.1)"/>
+      <circle cx="18" cy="16" r="3" stroke="url(#icon-grad)" stroke-width="1.8" fill="rgba(16,185,129,0.1)"/>
+      <path d="M9 18V5l12-2v13" stroke="url(#icon-grad)" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 9l12-2" stroke="url(#icon-grad)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- Hands / massage -->
+    <symbol id="icon-hands" viewBox="0 0 24 24">
+      <path d="M18 11V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2" stroke="url(#icon-grad)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <path d="M14 10V4a2 2 0 0 0-2-2 2 2 0 0 0-2 2v6" stroke="url(#icon-grad)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <path d="M10 10.5V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2v9" stroke="url(#icon-grad)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <path d="M18 11a2 2 0 0 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34L3.35 16a2 2 0 0 1 3-2.65L8 15" stroke="url(#icon-grad)" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <!-- Map pin / address -->
+    <symbol id="icon-pin" viewBox="0 0 24 24">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="url(#icon-grad)" stroke-width="1.8" fill="rgba(16,185,129,0.1)" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="12" cy="10" r="3" stroke="url(#icon-grad)" stroke-width="1.8" fill="rgba(16,185,129,0.15)"/>
+    </symbol>
+
+    <!-- Phone / telephone -->
+    <symbol id="icon-phone" viewBox="0 0 24 24">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="url(#icon-grad)" stroke-width="1.8" fill="rgba(16,185,129,0.1)" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <!-- Clock / work hours -->
+    <symbol id="icon-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" stroke="url(#icon-grad)" stroke-width="1.8" fill="rgba(16,185,129,0.07)"/>
+      <path d="M12 6v6l4 2" stroke="url(#icon-grad)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <!-- Chat / VK -->
+    <symbol id="icon-chat" viewBox="0 0 24 24">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="url(#icon-grad)" stroke-width="1.8" fill="rgba(16,185,129,0.1)" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </svg>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#" class="navbar__logo">
+        <svg class="navbar__logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="20" fill="url(#logo-grad)"/>
+          <text x="20" y="26" text-anchor="middle" fill="white" font-size="18" font-weight="800" font-family="Comfortaa, sans-serif">Л</text>
+          <defs><linearGradient id="logo-grad" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#fcd34d"/><stop offset="1" stop-color="#f97316"/></linearGradient></defs>
+        </svg>
+        <span class="navbar__logo-text">Лого<strong>Рита</strong></span>
+      </a>
+      <div class="navbar__links" id="nav-links">
+        <a href="#about" class="navbar__link">О центре</a>
+        <a href="#services" class="navbar__link">Услуги</a>
+        <a href="#results" class="navbar__link">Результаты</a>
+        <a href="#reviews" class="navbar__link">Отзывы</a>
+        <a href="#contacts" class="navbar__link">Контакты</a>
+      </div>
+      <a href="tel:+79826246836" class="btn btn--primary navbar__cta">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        Позвонить
+      </a>
+      <button class="navbar__burger" id="burger" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="hero__bg-shapes">
+      <div class="hero__shape hero__shape--1"></div>
+      <div class="hero__shape hero__shape--2"></div>
+      <div class="hero__shape hero__shape--3"></div>
+      <div class="hero__shape hero__shape--4"></div>
+      <div class="cloud-decoration cloud-1">
+        <svg viewBox="0 0 100 70" fill="white"><path d="M70,20 a20,20 0 0,0 -35,-5 a15,15 0 0,0 -25,10 a15,15 0 0,0 15,15 a25,12 0 0,0 45,0 a15,15 0 0,0 0,-20 z"/></svg>
+      </div>
+      <div class="cloud-decoration cloud-2">
+        <svg viewBox="0 0 100 70" fill="white"><path d="M70,20 a20,20 0 0,0 -35,-5 a15,15 0 0,0 -25,10 a15,15 0 0,0 15,15 a25,12 0 0,0 45,0 a15,15 0 0,0 0,-20 z"/></svg>
+      </div>
+      <div class="cloud-decoration cloud-3">
+        <svg viewBox="0 0 100 70" fill="white"><path d="M70,20 a20,20 0 0,0 -35,-5 a15,15 0 0,0 -25,10 a15,15 0 0,0 15,15 a25,12 0 0,0 45,0 a15,15 0 0,0 0,-20 z"/></svg>
+      </div>
+      
+      <div class="floating-letter letter-1">А</div>
+      <div class="floating-letter letter-2">Б</div>
+      <div class="floating-letter letter-3">В</div>
+      <div class="floating-letter letter-4">Р</div>
+      <div class="floating-letter letter-5">Ш</div>
+    </div>
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <div class="hero__badge">
+          <svg class="icon icon--sm"><use href="#icon-star"/></svg>
+          Более 30 лет опыта
+        </div>
+        <h1 class="hero__title">
+          Логопедический центр
+          <span class="hero__title-accent">ЛогоРита</span>
+        </h1>
+        <p class="hero__subtitle">
+          Помогаем детям и взрослым обрести чистую, красивую и свободную речь. 
+          Авторские методики, индивидуальный подход, доказанные результаты.
+        </p>
+        <div class="hero__actions">
+          <a href="tel:+79826246836" class="btn btn--accent btn--lg">
+            Записаться на приём
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#services" class="btn btn--ghost btn--lg">
+            Наши услуги
+          </a>
+        </div>
+        <div class="hero__stats">
+          <div class="hero__stat">
+            <span class="hero__stat-number" data-count="1400">0</span>
+            <span class="hero__stat-label">подписчиков</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <span class="hero__stat-number" data-count="31">0</span>
+            <span class="hero__stat-label">год опыта</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <span class="hero__stat-number" data-count="500">0</span>
+            <span class="hero__stat-label">счастливых семей</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__image-wrapper">
+          <div class="hero__glow"></div>
+          <img src="/hero-kids.png" alt="Дети играют и учатся — ЛогоРита" class="hero__image" />
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll-indicator">
+      <span>Листайте вниз</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">О нас</span>
+        <h2 class="section-title">Опыт и знания <span class="text-gradient">на благо детей</span></h2>
+        <p class="section-desc">
+          Логопедический центр «ЛогоРита» открыл свои двери в Юго-западном районе Екатеринбурга. 
+          Наша миссия — помочь каждому ребёнку раскрыть свой речевой потенциал.
+        </p>
+      </div>
+      <div class="about__grid">
+        <div class="about__card about__card--main">
+          <div class="about__card-photo">
+            <img src="/images/margarita.jpg" alt="Маргарита Николаевна Першина" class="director-photo" />
+          </div>
+          <h3>Маргарита Николаевна Першина</h3>
+          <p class="about__card-role">Директор • Логопед-дефектолог • Сурдопедагог • Заиколог</p>
+          <p>Выпускница Свердловского государственного педагогического института ордена «Знак Почёта». 
+          Специальность: «Олигофренопедагогика и логопедия». Диплом с отличием.</p>
+          <div class="about__card-stats">
+            <div class="about__mini-stat">
+              <strong>31</strong>
+              <span>год общего стажа</span>
+            </div>
+            <div class="about__mini-stat">
+              <strong>23</strong>
+              <span>года в здравоохранении</span>
+            </div>
+            <div class="about__mini-stat">
+              <strong>8</strong>
+              <span>лет педагогики</span>
+            </div>
+          </div>
+        </div>
+        <div class="about__features">
+          <div class="about__feature">
+            <div class="about__feature-icon">
+              <svg class="icon icon--md"><use href="#icon-target"/></svg>
+            </div>
+            <div>
+              <h4>Индивидуальный подход</h4>
+              <p>Программа занятий составляется под каждого ребёнка с учётом его особенностей</p>
+            </div>
+          </div>
+          <div class="about__feature">
+            <div class="about__feature-icon">
+              <svg class="icon icon--md"><use href="#icon-book"/></svg>
+            </div>
+            <div>
+              <h4>Авторские методики</h4>
+              <p>Коррекция заикания по методу Шутовой Н.Г. «Академия речи»</p>
+            </div>
+          </div>
+          <div class="about__feature">
+            <div class="about__feature-icon">
+              <svg class="icon icon--md"><use href="#icon-home"/></svg>
+            </div>
+            <div>
+              <h4>Уютный кабинет</h4>
+              <p>Современное оборудование и тёплая атмосфера для комфортных занятий</p>
+            </div>
+          </div>
+          <div class="about__feature">
+            <div class="about__feature-icon">
+              <svg class="icon icon--md"><use href="#icon-heart"/></svg>
+            </div>
+            <div>
+              <h4>Поддержка семьи</h4>
+              <p>Работаем в тесном контакте с родителями, обучаем и консультируем</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Услуги</span>
+        <h2 class="section-title">Чем мы <span class="text-gradient">можем помочь</span></h2>
+        <p class="section-desc">
+          Полный спектр логопедических услуг для детей и взрослых
+        </p>
+      </div>
+      <div class="services__grid">
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg class="icon icon--lg"><use href="#icon-speech"/></svg>
+          </div>
+          <h3 class="service-card__title">Запуск речи</h3>
+          <p class="service-card__desc">Комплексная программа для детей с задержкой речевого развития. Мягко и эффективно запускаем речь у малышей.</p>
+          <div class="service-card__price">от 1 200 ₽</div>
+          <div class="service-card__shine"></div>
+        </div>
+        <div class="service-card service-card--featured">
+          <div class="service-card__badge">Популярно</div>
+          <div class="service-card__icon">
+            <svg class="icon icon--lg"><use href="#icon-wave"/></svg>
+          </div>
+          <h3 class="service-card__title">Коррекция заикания</h3>
+          <p class="service-card__desc">Интенсивные курсы по авторскому методу Шутовой Н.Г. Для дошкольников, школьников и взрослых.</p>
+          <div class="service-card__price">Интенсивный курс</div>
+          <div class="service-card__shine"></div>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg class="icon icon--lg"><use href="#icon-letters"/></svg>
+          </div>
+          <h3 class="service-card__title">Коррекция звукопроизношения</h3>
+          <p class="service-card__desc">Исправление дефектов звукопроизношения: постановка, автоматизация и дифференциация звуков.</p>
+          <div class="service-card__price">от 1 200 ₽</div>
+          <div class="service-card__shine"></div>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg class="icon icon--lg"><use href="#icon-brain"/></svg>
+          </div>
+          <h3 class="service-card__title">Логопед-дефектолог</h3>
+          <p class="service-card__desc">Диагностика и консультация. Работа с детьми с задержкой психо-речевого развития и нарушениями слуха.</p>
+          <div class="service-card__price">от 3 500 ₽</div>
+          <div class="service-card__shine"></div>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg class="icon icon--lg"><use href="#icon-music"/></svg>
+          </div>
+          <h3 class="service-card__title">Логоритмика</h3>
+          <p class="service-card__desc">Логоритмика с нейрогимнастикой для малышей и детей с ОНР и ЗРР. Движение + речь + музыка.</p>
+          <div class="service-card__price">от 1 200 ₽</div>
+          <div class="service-card__shine"></div>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg class="icon icon--lg"><use href="#icon-hands"/></svg>
+          </div>
+          <h3 class="service-card__title">Лого-фасциальный массаж</h3>
+          <p class="service-card__desc">Специализированный массаж артикуляционной мускулатуры для улучшения речевых возможностей.</p>
+          <div class="service-card__price">от 1 900 ₽</div>
+          <div class="service-card__shine"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS SECTION -->
+  <section class="results" id="results">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Результаты</span>
+        <h2 class="section-title">Видео<span class="text-gradient">результаты</span></h2>
+        <p class="section-desc">Реальные истории успеха наших воспитанников</p>
+      </div>
+      <div class="results__grid">
+        <a href="https://vk.com/video/@logorita" target="_blank" rel="noopener" class="result-card">
+          <div class="result-card__play">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="result-card__overlay"></div>
+          <div class="result-card__content">
+            <h4>Коррекция заикания</h4>
+            <p>Интенсивный курс для дошкольников</p>
+          </div>
+        </a>
+        <a href="https://vk.com/video/@logorita" target="_blank" rel="noopener" class="result-card">
+          <div class="result-card__play">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="result-card__overlay"></div>
+          <div class="result-card__content">
+            <h4>Запуск речи у малышей</h4>
+            <p>Результаты после курса занятий</p>
+          </div>
+        </a>
+        <a href="https://vk.com/video/@logorita" target="_blank" rel="noopener" class="result-card">
+          <div class="result-card__play">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="result-card__overlay"></div>
+          <div class="result-card__content">
+            <h4>Логоритмика</h4>
+            <p>Занятия с нейрогимнастикой</p>
+          </div>
+        </a>
+      </div>
+      <div class="results__cta">
+        <a href="https://vk.com/video/@logorita" target="_blank" rel="noopener" class="btn btn--outline">
+          Смотреть все видео в ВК
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS SECTION -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Отзывы</span>
+        <h2 class="section-title">Что говорят <span class="text-gradient">родители</span></h2>
+        <p class="section-desc">Более 50 отзывов от благодарных семей</p>
+      </div>
+      <div class="reviews__carousel" id="reviews-carousel">
+        <div class="review-card">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">
+            «Огромное спасибо, Маргарита Николаевна! Мы прошли курс по коррекции заикания, и впервые за долгое время выдохнули. 
+            У сына появились первые успехи: ушла паника перед началом фразы, пропали тики, появилась плавность.»
+          </p>
+          <div class="review-card__author">
+            <div class="review-card__avatar">Д</div>
+            <div>
+              <strong>Дарья</strong>
+              <span>мама Мирона, 4 года</span>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">
+            «Курс по коррекции заикания дал потрясающий результат! Лиза стала говорить свободно, 
+            без запинок. Огромная благодарность всему коллективу центра за профессионализм и чуткость!»
+          </p>
+          <div class="review-card__author">
+            <div class="review-card__avatar">А</div>
+            <div>
+              <strong>Анна</strong>
+              <span>мама Лизы, 7 лет</span>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">
+            «Мы ходим на логоритмику с нейрогимнастикой уже 3 месяца. Ребёнок стал лучше говорить, 
+            появились новые слова, фразы. Маргарита Николаевна — профессионал с большой буквы!»
+          </p>
+          <div class="review-card__author">
+            <div class="review-card__avatar">Е</div>
+            <div>
+              <strong>Елена</strong>
+              <span>мама Семёна, 5 лет</span>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">
+            «После интенсива по коррекции заикания Ксения стала увереннее в себе, перестала бояться говорить 
+            на уроках. Результат превзошёл все наши ожидания. Спасибо!»
+          </p>
+          <div class="review-card__author">
+            <div class="review-card__avatar">М</div>
+            <div>
+              <strong>Марина</strong>
+              <span>мама Ксении, 9 лет</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reviews__controls">
+        <button class="reviews__arrow reviews__arrow--prev" id="prev-review" aria-label="Предыдущий отзыв">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </button>
+        <div class="reviews__dots" id="review-dots"></div>
+        <button class="reviews__arrow reviews__arrow--next" id="next-review" aria-label="Следующий отзыв">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-block">
+        <div class="cta-block__content">
+          <h2>Запишитесь на консультацию</h2>
+          <p>Первый шаг к красивой речи вашего ребёнка — бесплатная консультация с нашим специалистом</p>
+          <div class="cta-block__actions">
+            <a href="tel:+79826246836" class="btn btn--white btn--lg">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              +7 (982) 624-68-36
+            </a>
+            <a href="https://vk.com/logorita" target="_blank" rel="noopener" class="btn btn--ghost-white btn--lg">
+              Написать в ВК
+            </a>
+          </div>
+        </div>
+        <div class="cta-block__decoration">
+          <div class="cta-block__circle cta-block__circle--1"></div>
+          <div class="cta-block__circle cta-block__circle--2"></div>
+          <div class="cta-block__circle cta-block__circle--3"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTS SECTION -->
+  <section class="contacts" id="contacts">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Контакты</span>
+        <h2 class="section-title">Как нас <span class="text-gradient">найти</span></h2>
+      </div>
+      <div class="contacts__grid">
+        <div class="contacts__info">
+          <div class="contact-item">
+            <div class="contact-item__icon">
+              <svg class="icon icon--md"><use href="#icon-pin"/></svg>
+            </div>
+            <div>
+              <h4>Адрес</h4>
+              <p>ул. Московская 212/1-133, Екатеринбург</p>
+              <span class="contact-item__hint">Юго-западный район</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item__icon">
+              <svg class="icon icon--md"><use href="#icon-phone"/></svg>
+            </div>
+            <div>
+              <h4>Телефон</h4>
+              <a href="tel:+79826246836">+7 (982) 624-68-36</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item__icon">
+              <svg class="icon icon--md"><use href="#icon-clock"/></svg>
+            </div>
+            <div>
+              <h4>Режим работы</h4>
+              <p>Пн–Сб: 9:00 – 20:00</p>
+              <span class="contact-item__hint">Вс: выходной</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item__icon">
+              <svg class="icon icon--md"><use href="#icon-chat"/></svg>
+            </div>
+            <div>
+              <h4>Мы в ВКонтакте</h4>
+              <a href="https://vk.com/logorita" target="_blank" rel="noopener">vk.com/logorita</a>
+              <span class="contact-item__hint">1 400+ подписчиков</span>
+            </div>
+          </div>
+        </div>
+        <div class="contacts__map">
+          <iframe 
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3A1&source=constructorLink&ll=60.573150%2C56.803440&z=16&pt=60.573150,56.803440,pm2gnm" 
+            width="100%" 
+            height="100%" 
+            frameborder="0"
+            title="Карта расположения центра ЛогоРита"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#" class="navbar__logo">
+          <svg class="navbar__logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="20" fill="url(#logo-grad2)"/>
+            <text x="20" y="26" text-anchor="middle" fill="white" font-size="18" font-weight="800" font-family="Comfortaa, sans-serif">Л</text>
+            <defs><linearGradient id="logo-grad2" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#fcd34d"/><stop offset="1" stop-color="#f97316"/></linearGradient></defs>
+          </svg>
+          <span class="navbar__logo-text">Лого<strong>Рита</strong></span>
+        </a>
+        <p>Логопедический центр в Екатеринбурге.<br>Опыт и знания на благо детей — наш девиз.</p>
+      </div>
+      <div class="footer__links">
+        <h5>Навигация</h5>
+        <a href="#about">О центре</a>
+        <a href="#services">Услуги</a>
+        <a href="#results">Результаты</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#contacts">Контакты</a>
+      </div>
+      <div class="footer__links">
+        <h5>Услуги</h5>
+        <a href="#services">Запуск речи</a>
+        <a href="#services">Коррекция заикания</a>
+        <a href="#services">Логоритмика</a>
+        <a href="#services">Лого-фасциальный массаж</a>
+      </div>
+      <div class="footer__contact">
+        <h5>Контакты</h5>
+        <a href="tel:+79826246836">+7 (982) 624-68-36</a>
+        <p>ул. Московская 212/1-133<br>Екатеринбург</p>
+        <div class="footer__social">
+          <a href="https://vk.com/logorita" target="_blank" rel="noopener" aria-label="ВКонтакте" class="footer__social-link">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.862-.523-2.049-1.727-1.033-1-1.49-1.134-1.744-1.134-.354 0-.456.102-.456.59v1.575c0 .424-.135.678-1.253.678-1.846 0-3.896-1.118-5.335-3.202C4.624 10.857 4 8.57 4 8.112c0-.254.102-.49.59-.49h1.744c.44 0 .61.203.778.677.86 2.49 2.3 4.675 2.894 4.675.22 0 .322-.102.322-.66V9.721c-.068-1.186-.695-1.287-.695-1.71 0-.203.17-.406.44-.406h2.744c.373 0 .508.203.508.643v3.473c0 .372.17.508.271.508.22 0 .407-.136.813-.542 1.27-1.422 2.15-3.625 2.15-3.625.12-.254.322-.49.762-.49h1.744c.524 0 .644.27.524.643-.22 1.017-2.354 4.031-2.354 4.031-.186.305-.254.44 0 .78.186.254.796.779 1.203 1.253.745.847 1.32 1.558 1.473 2.049.17.49-.085.744-.576.744z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© 2024 ЛогоРита — Логопедический центр. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

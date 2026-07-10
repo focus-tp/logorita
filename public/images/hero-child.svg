@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <!-- Background circle -->
+  <circle cx="200" cy="200" r="180" fill="url(#bgGrad)" opacity="0.08"/>
+  
+  <!-- Child figure -->
+  <g transform="translate(160, 80)">
+    <!-- Head -->
+    <circle cx="40" cy="40" r="35" fill="#FFD4B8"/>
+    <!-- Hair -->
+    <path d="M10 35 C10 15, 70 15, 70 35 C70 25, 60 10, 40 10 C20 10, 10 25, 10 35Z" fill="#8B6547"/>
+    <!-- Eyes -->
+    <circle cx="28" cy="42" r="4" fill="#2D3748"/>
+    <circle cx="52" cy="42" r="4" fill="#2D3748"/>
+    <circle cx="30" cy="40" r="1.5" fill="white"/>
+    <circle cx="54" cy="40" r="1.5" fill="white"/>
+    <!-- Smile -->
+    <path d="M30 55 Q40 65, 50 55" stroke="#E07A5F" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- Cheeks -->
+    <circle cx="22" cy="52" r="5" fill="#FFB4A2" opacity="0.5"/>
+    <circle cx="58" cy="52" r="5" fill="#FFB4A2" opacity="0.5"/>
+    
+    <!-- Body -->
+    <rect x="20" y="75" width="40" height="60" rx="12" fill="#34D399"/>
+    
+    <!-- Arms -->
+    <path d="M20 85 L-5 110" stroke="#FFD4B8" stroke-width="10" stroke-linecap="round"/>
+    <path d="M60 85 L85 105" stroke="#FFD4B8" stroke-width="10" stroke-linecap="round"/>
+    
+    <!-- Book in hand -->
+    <rect x="75" y="95" width="30" height="22" rx="3" fill="#06B6D4"/>
+    <rect x="78" y="99" width="10" height="2" rx="1" fill="white" opacity="0.6"/>
+    <rect x="78" y="103" width="14" height="2" rx="1" fill="white" opacity="0.6"/>
+    <rect x="78" y="107" width="8" height="2" rx="1" fill="white" opacity="0.6"/>
+    
+    <!-- Legs -->
+    <rect x="22" y="135" width="14" height="40" rx="7" fill="#FFD4B8"/>
+    <rect x="44" y="135" width="14" height="40" rx="7" fill="#FFD4B8"/>
+    
+    <!-- Shoes -->
+    <ellipse cx="29" cy="178" rx="12" ry="7" fill="#2D3748"/>
+    <ellipse cx="51" cy="178" rx="12" ry="7" fill="#2D3748"/>
+  </g>
+  
+  <!-- Speech bubbles -->
+  <g opacity="0.9">
+    <rect x="60" y="100" width="60" height="35" rx="12" fill="#10B981"/>
+    <text x="90" y="122" text-anchor="middle" fill="white" font-size="16" font-weight="800" font-family="Arial">Аа</text>
+    <polygon points="95,135 105,135 100,145" fill="#10B981"/>
+  </g>
+  
+  <g opacity="0.7">
+    <rect x="280" y="140" width="50" height="30" rx="10" fill="#06B6D4"/>
+    <text x="305" y="160" text-anchor="middle" fill="white" font-size="14" font-weight="800" font-family="Arial">Бб</text>
+    <polygon points="290,170 300,170 295,178" fill="#06B6D4"/>
+  </g>
+  
+  <!-- Stars -->
+  <g fill="#FBBF24" opacity="0.6">
+    <polygon points="50,200 53,210 63,210 55,216 58,226 50,220 42,226 45,216 37,210 47,210"/>
+    <polygon points="330,100 332,106 338,106 333,110 335,116 330,112 325,116 327,110 322,106 328,106" transform="scale(0.8)"/>
+    <polygon points="350,250 352,256 358,256 353,260 355,266 350,262 345,266 347,260 342,256 348,256"/>
+  </g>
+  
+  <!-- Musical notes (for logorhythmics) -->
+  <g fill="#10B981" opacity="0.4">
+    <circle cx="80" cy="280" r="8"/>
+    <rect x="88" y="255" width="3" height="25"/>
+    <path d="M88 255 Q100 248, 100 260" stroke="#10B981" stroke-width="3" fill="none"/>
+    
+    <circle cx="310" cy="60" r="6"/>
+    <rect x="316" y="40" width="2.5" height="20"/>
+  </g>
+  
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="400" y2="400">
+      <stop stop-color="#10B981"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+</svg>
