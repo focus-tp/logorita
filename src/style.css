@@ -54,8 +54,9 @@
 
 /* RESET */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { overflow-x: hidden; width: 100%; }
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-body { font-family: var(--ff-body); font-size: 1rem; line-height: 1.7; color: var(--clr-text); background: var(--clr-bg); overflow-x: hidden; position: relative; }
+body { font-family: var(--ff-body); font-size: 1rem; line-height: 1.7; color: var(--clr-text); background: var(--clr-bg); position: relative; }
 body::before { content: ''; position: fixed; inset: 0; z-index: -1; background: radial-gradient(circle at 10% 20%, rgba(62,207,142,0.08), transparent 40%), radial-gradient(circle at 90% 80%, rgba(26,200,208,0.06), transparent 40%), radial-gradient(circle at 50% 100%, rgba(255,107,53,0.04), transparent 40%); pointer-events: none; animation: bgPulse 15s ease-in-out infinite alternate; }
 img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; transition: color var(--transition-fast); }
